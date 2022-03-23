@@ -13,7 +13,7 @@ public class LSAndStack {
         topNode=null;
     }
     public boolean Empty() {
-        return (counter == 0);
+        return  topNode==null;
     }
     public boolean Full() {
         return (counter == size);
