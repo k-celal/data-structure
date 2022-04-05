@@ -59,7 +59,6 @@ public class App {
             else if(select.equals("5"))
             {
                 System.out.println("Tree size is : " + bt.nodeCounter);
-
             }
             else if(select.equals("q"))
             {

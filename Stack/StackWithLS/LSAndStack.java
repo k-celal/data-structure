@@ -12,6 +12,9 @@ public class LSAndStack {
         this.size = size;
         topNode=null;
     }
+    public int sizeOf(){
+        return counter;
+    }
     public boolean Empty() {
         return  topNode==null;
     }
@@ -95,4 +98,5 @@ public class LSAndStack {
         System.out.println("Not Found!!!");
 
     }
+    
 }

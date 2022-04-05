@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter the size of the queue you want to create : ");
+        System.out.print("Please enter the size of the stack you want to create : ");
         int size = sc.nextInt();
         sc.nextLine();
         LSAndStack lStack = new LSAndStack(size);
 
         while(true){
-            System.out.print("Please select your process\n1-)Push\n2-)Pop\n3-)Empty\n4-)Full\n5-)Peek\nSelect : ");
+            System.out.print("Please select your process\n1-)Push\n2-)Pop\n3-)Empty\n4-)Full\n5-)Peek6-)SizeOf\n\nSelect : ");
             String select = sc.next();
             if(select.equals("q"))
             {
@@ -48,6 +48,9 @@ public class App {
             }
             else if(select.equals("5")){
                 lStack.Peek();
+            }
+            else if(select.equals("6")){
+                lStack.sizeOf();
             }
             else{
                 System.out.println("Mistake wrong choice");
