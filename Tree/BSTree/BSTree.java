@@ -1,7 +1,5 @@
 package Tree.BSTree;
 
-
-
 public class BSTree {
     Node rootNode;
     int height = -1;
@@ -15,14 +13,16 @@ public class BSTree {
     public boolean checked() {
         return rootNode == null;
     }
-    public int minValue(Node rootNode){
-        int minv= rootNode.data;
-        while(rootNode.leftNextNode != null){
+
+    public int minValue(Node rootNode) {
+        int minv = rootNode.data;
+        while (rootNode.leftNextNode != null) {
             minv = rootNode.leftNextNode.data;
-            rootNode=rootNode.leftNextNode;
+            rootNode = rootNode.leftNextNode;
         }
         return minv;
     }
+
     public Node newNode(int data) {
         Node tempNode = new Node(data);
         nodeCounter++;
@@ -47,43 +47,45 @@ public class BSTree {
             newNode = newNode(data);
         }
         return newNode;
-        
+
     }
-    public Node Search(Node rootNode , int data){
-        if(rootNode==  null ||rootNode.data==data){
+
+    public Node Search(Node rootNode, int data) {
+        if (rootNode == null || rootNode.data == data) {
             return rootNode;
         }
-        if(rootNode.data <data){
+        if (rootNode.data < data) {
             return Search(rootNode.rightNextNode, data);
         }
         return Search(rootNode.leftNextNode, data);
-        
+
     }
-    public void Add(int data){
+
+    public void Add(int data) {
         Node newNode = new Node(data);
-        if(checked()){
-            rootNode=newNode;
+        if (checked()) {
+            rootNode = newNode;
             return;
         }
-        Node prevNode=null;
-        Node tempNode=rootNode;
-        while(tempNode != null){
-            if(tempNode.data>data){
-                prevNode=tempNode;
-                tempNode=tempNode.leftNextNode;
-            }
-            else if(tempNode.data<data){
-                prevNode=tempNode;
-                tempNode=tempNode.rightNextNode;
+        Node prevNode = null;
+        Node tempNode = rootNode;
+        while (tempNode != null) {
+            if (tempNode.data > data) {
+                prevNode = tempNode;
+                tempNode = tempNode.leftNextNode;
+            } else if (tempNode.data < data) {
+                prevNode = tempNode;
+                tempNode = tempNode.rightNextNode;
             }
         }
-        if(prevNode.data>data){
-            prevNode.leftNextNode=newNode;
-        }else{
-            prevNode.rightNextNode=newNode;
+        if (prevNode.data > data) {
+            prevNode.leftNextNode = newNode;
+        } else {
+            prevNode.rightNextNode = newNode;
         }
 
     }
+
     public void preOrder(Node tempNode) {
         if (checked()) {
             System.out.println("Tree is Empty");
@@ -142,30 +144,25 @@ public class BSTree {
     public int nodeCounter() {
         return nodeCounter;
     }
-    public Node Delete(Node rootNode , int data){
-        if(rootNode== null){
+
+    public Node Delete(Node rootNode, int data) {
+        if (rootNode == null) {
             return rootNode;
         }
-        if(data < rootNode.data){
-            rootNode.leftNextNode=Delete(rootNode.leftNextNode, data);
-        }
-        else if(data> rootNode.data){
-            rootNode.rightNextNode=Delete(rootNode.rightNextNode, data);
-        }
-        else{
-            if(rootNode.leftNextNode == null)
-            {
+        if (data < rootNode.data) {
+            rootNode.leftNextNode = Delete(rootNode.leftNextNode, data);
+        } else if (data > rootNode.data) {
+            rootNode.rightNextNode = Delete(rootNode.rightNextNode, data);
+        } else {
+            if (rootNode.leftNextNode == null) {
                 return rootNode.rightNextNode;
-            }
-            else if(rootNode.rightNextNode == null){
+            } else if (rootNode.rightNextNode == null) {
                 return rootNode.leftNextNode;
             }
-            rootNode.data= minValue(rootNode.rightNextNode);
-            rootNode.rightNextNode=Delete(rootNode.rightNextNode, rootNode.data);
+            rootNode.data = minValue(rootNode.rightNextNode);
+            rootNode.rightNextNode = Delete(rootNode.rightNextNode, rootNode.data);
 
         }
         return rootNode;
     }
-  
-
-
+}
