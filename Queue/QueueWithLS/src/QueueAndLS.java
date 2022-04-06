@@ -1,11 +1,10 @@
 package Queue.QueueWithLS;
-
 public class QueueAndLS {
     public Node frontNode;
     public Node rearNode;
     public int counter;
     public int counter2;
-    public int size;
+    public int size;    
     
     public QueueAndLS(int size) {
         this.size = size;
@@ -22,7 +21,6 @@ public class QueueAndLS {
     public boolean Empty() {
         return (counter==0);
     }
-
     public void enQueue(int data){
         if(Full())
         {
