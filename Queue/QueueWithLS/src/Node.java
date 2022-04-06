@@ -1,6 +1,4 @@
-package Queue.QueueWithLS;
-
-
+package Queue.QueueWithLS.src;
 
 public class Node {
     public int data;

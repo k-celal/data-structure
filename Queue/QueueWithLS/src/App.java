@@ -1,4 +1,4 @@
-package Queue.QueueWithLS;
+package Queue.QueueWithLS.src;
 
 import java.util.Scanner;
 
