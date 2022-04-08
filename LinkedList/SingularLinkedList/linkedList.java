@@ -116,6 +116,33 @@ public class linkedList {
         }
         
     }
+    public void sorttadd(int data){//me
+        Node tempNode = headNode;
+        Node newNode = new Node(data);
+        if(headNode==null){
+            headNode=newNode;
+        }
+        else{
+                if(newNode.data<= headNode.data){
+                    newNode.next=headNode;
+                    headNode=newNode;
+                }
+                else{
+                    while(tempNode.next!=null){
+                        if(tempNode.data<data && tempNode.next.data>data){
+                            newNode.next=tempNode.next;
+                            tempNode.next=newNode;
+                            return;
+                        }
+                        else{
+                            tempNode=tempNode.next;
+                        }
+                    }
+                    tempNode.next=newNode;
+                }
+
+        }
+    }
     public void sortAdd(int data)
     {
         Node temp = headNode;
