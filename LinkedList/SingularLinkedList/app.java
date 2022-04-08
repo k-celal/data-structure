@@ -16,7 +16,7 @@ public class app {
         System.out.print("Please add elements data : ");
         int data = sc.nextInt();
         sc.nextLine();
-        lst.sortAdd(data);
+        lst.sorttadd(data);
 
     }
     public static void Delete()
@@ -41,8 +41,8 @@ public class app {
             System.out.println("the data you are looking for is in this order : " + lst.search(data));
         }
     }
-
-    public static void main(String[] args) {
+   
+        public static void main(String[] args) {
         
         while(true)
         {
