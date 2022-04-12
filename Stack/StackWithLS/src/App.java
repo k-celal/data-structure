@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Please enter the size of the queue you want to create : ");
+        System.out.print("Please enter the size of the stack you want to create : ");
         int size = sc.nextInt();
         sc.nextLine();
-        QueueAndLS qLs = new QueueAndLS(size);
+        LSAndStack lStack = new LSAndStack(size);
 
         while(true){
-            System.out.print("Please select your process\n1-)enQueue\n2-)deQueue\n3-)Empty\n4-)Full\nSelect : ");
+            System.out.print("Please select your process\n1-)Push\n2-)Pop\n3-)Empty\n4-)Full\n5-)Peek6-)SizeOf\n\nSelect : ");
             String select = sc.next();
             if(select.equals("q"))
             {
@@ -18,17 +17,17 @@ public class App {
             }
             else if(select.equals("1"))
             {
-                System.out.print("Please enQueue elements data : ");
+                System.out.print("Please Push elements data : ");
                 int data = sc.nextInt();
                 sc.nextLine();
-                qLs.enQueue(data);
+                lStack.Push(data);
             }
             else if(select.equals("2"))
             {
-                qLs.deQueue();
+                lStack.Pop();
             }
             else if(select.equals("3")){
-                if(qLs.Empty())
+                if(lStack.Empty())
                 {
                     System.out.println("Queue is empty");
                 }
@@ -37,7 +36,7 @@ public class App {
                 }
             }
             else if(select.equals("4")){
-                if(qLs.Full())
+                if(lStack.Full())
                 {
                     System.err.println("Queue is Full");
                 }
@@ -45,11 +44,16 @@ public class App {
                     System.out.println("Queue is not Full");
                 }
             }
+            else if(select.equals("5")){
+                lStack.Peek();
+            }
+            else if(select.equals("6")){
+                lStack.sizeOf();
+            }
             else{
                 System.out.println("Mistake wrong choice");
             }
         }
         sc.close(); 
     }
-    
 }

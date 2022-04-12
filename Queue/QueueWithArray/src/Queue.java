@@ -1,5 +1,3 @@
-package Queue.QueueWithArray.src;
-
 public class Queue {
     public int array[];
     public int size;

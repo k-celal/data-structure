@@ -1,5 +1,3 @@
-package Queue.QueueWithLS.src;
-
 public class QueueAndLS {
     public Node frontNode;
     public Node rearNode;
