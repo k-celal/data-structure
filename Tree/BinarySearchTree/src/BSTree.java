@@ -159,7 +159,6 @@ public class BSTree {
             }
             rootNode.data = minValue(rootNode.rightNextNode);
             rootNode.rightNextNode = Delete(rootNode.rightNextNode, rootNode.data);
-
         }
         return rootNode;
     }

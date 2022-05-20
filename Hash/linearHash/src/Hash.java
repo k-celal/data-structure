@@ -1,12 +1,14 @@
 public class Hash {
     int key;
-    int counter;
+    int cakisma=0;
+    int tekyerlesme=0;
+    int yerdolu=0;
     int[] hasMap= new int[100];
     
     public void hashAdd(int value) {
         key=value%100;
         if(hasMap[key]!=0){
-            counter++;
+            
             if(linearProbing(value)==-1){
                 System.out.println("List is full");
             }
@@ -14,13 +16,15 @@ public class Hash {
         }
         else{
             hasMap[key]=value;
+            tekyerlesme++;
         }
     }
     public int linearProbing(int value){
         for (int i = 0; i < hasMap.length; i++) {
+            cakisma++;
             key=(value+i)%100;
             if(hasMap[key]!=0){
-                counter++;
+                yerdolu++;
                 continue;
             }
             else{
@@ -40,7 +44,6 @@ public class Hash {
                 if(hasMap[key]==value){
                     return key;
                 }else{
-                    counter++;
                     continue;
                 }              
             }
@@ -54,5 +57,20 @@ public class Hash {
         else{
             System.out.println("The item you requested is not in the list");
         }
+    }
+    public void linearDisplay(){
+        for (int i = 0; i < hasMap.length; i++) {
+            if(hasMap[i]==0){
+                continue;
+            }
+            else{
+                System.out.println(i + "-)" + hasMap[i]);
+            }
+        }
+    }
+    public void statictics(){
+        System.out.println("Cakisma " + cakisma);
+        System.out.println("Yer dolu : " + yerdolu);
+        System.out.println("Tekte yerleşme " + tekyerlesme);       
     }
 }

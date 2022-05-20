@@ -41,5 +41,23 @@ public class Hash {
         }
         
     }
+    public void Display() {
+        Node tempNode = new Node();
+        for (int i = 0; i < nd.length; i++) {
+            if(nd[i]==null){
+                continue;
+            }else{
+                System.out.print(i + "-)" + nd[i].data);
+                if(nd[i].next!=null){
+                    tempNode=nd[i];
+                    while(tempNode.next != null){
+                    System.out.print(" -> "+tempNode.next.data);
+                    tempNode=tempNode.next;
+                    }
+                }
+            }
+            System.out.println();   
+        }
+    }
 
 }

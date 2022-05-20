@@ -1,5 +1,3 @@
-package Queue.QueueWithArray.src;
-
 public class App {
     public static void main(String[] args) {
 
