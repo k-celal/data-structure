@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void seeList(BSTree bt, Scanner sc) {
         System.out.print(
-                "Please choose how you want to view the list.\n1-)preOrder\n2-)inOrder\n3-)postorder\nSelection : ");
+                "Please choose how you want to view the list.\n1-)preOrder\n2-)inOrder\n3-)postorder\n4-)levelOrder\nSelection : ");
         String select = sc.nextLine();
 
         if (select.equals("1")) {
@@ -12,6 +12,8 @@ public class App {
             bt.inOrder(bt.rootNode);
         } else if (select.equals("3")) {
             bt.postOrder(bt.rootNode);
+        } else if (select.equals("4")) {
+            bt.levelOrder(bt.rootNode);
         } else {
             System.out.println("Mistake wrong choice");
         }

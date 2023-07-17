@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BSTree {
     Node rootNode;
     int height = -1;
@@ -102,9 +105,9 @@ public class BSTree {
             System.out.println("Tree is Empty");
         } else {
             if (tempNode != null) {
-                preOrder(tempNode.leftNextNode);
+                inOrder(tempNode.leftNextNode);
                 System.out.print(tempNode.data + "    ");
-                preOrder(tempNode.rightNextNode);
+                inOrder(tempNode.rightNextNode);
             }
         }
 
@@ -115,13 +118,29 @@ public class BSTree {
             System.out.println("Tree is Empty");
         } else {
             if (tempNode != null) {
-                preOrder(tempNode.leftNextNode);
-                preOrder(tempNode.rightNextNode);
+                postOrder(tempNode.leftNextNode);
+                postOrder(tempNode.rightNextNode);
                 System.out.print(tempNode.data + "    ");
 
             }
         }
 
+    }
+
+    public void levelOrder(Node rootNode) {
+        Queue <Node> que = new LinkedList<>();
+        que.add(rootNode);
+        Node tempNode;
+        while(!que.isEmpty()){
+            tempNode=que.poll();
+            System.out.print(tempNode.data+ "   ");
+            if(tempNode.leftNextNode!=null){
+                que.add(tempNode.leftNextNode);
+            }
+            if(tempNode.rightNextNode!=null){
+                que.add(tempNode.rightNextNode);
+            }
+        }
     }
 
     public int height(Node rootNode) {

@@ -92,10 +92,10 @@ public class AVLTree {
 
     }
 
-    public Node leftRotate(Node tempNode) {
-        Node a = tempNode.rightNode;
-        Node b = a.leftNode;
-
+    public Node leftRotate(Node tempNode) {//10
+        Node a = tempNode.rightNode;//20
+        Node b = a.leftNode;//15
+        
         a.leftNode = tempNode;
         tempNode.rightNode = b;
 

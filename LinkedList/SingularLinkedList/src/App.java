@@ -33,7 +33,7 @@ public class App {
         {
             System.out.println("The item you searched for was not found");
         }else{
-            System.out.println("the data you are looking for is in this order : " + lst.search(data));
+            System.out.println("the data you are looking for is in this order : " + (lst.search(data)-1));
         }
     }
    

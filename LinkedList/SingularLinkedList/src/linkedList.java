@@ -107,7 +107,7 @@ public class linkedList {
             }
             sayac++;
         }
-        if(sizeOf()<sayac){
+        if(sizeOf()+1<sayac && sizeOf()==0){
             return -1;
         }else{
             return sayac;
